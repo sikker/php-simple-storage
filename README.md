@@ -17,21 +17,18 @@ Dependencies
 Usage
 -----
 
-- Move the storage folder into your web area.
-- Link the class into your existing project.
-
+1. Move the storage folder into your web area.
+2. Link the class into your existing project.
 ```PHP
 require_once "storage/simple_storage.class.php";
 ```
 
-- Create an instance of the class.
-
+3. Create an instance of the class.
 ```PHP
 $storage = new SimpleStorage();
 ```
 
-- Put and get content as needed. Note that the storage key must be a string!.
-
+4. Put and get content as needed. Note that the storage key must be a string!.
 ```PHP
 $book = array(														
 	"title" => "A Day In The Life",									
