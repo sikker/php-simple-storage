@@ -1,17 +1,21 @@
-﻿# Simple Key:Value Flat File Storage Class
+﻿Simple Key:Value Flat File Storage Class
+========================================
 
 This class provides an interface to a very simple key:value based storage system. All data is 
 serialized and saved to a flat file. 
 
-## Features
+Features
+--------
 
 - Provides a key:value storage system. Supports most PHP objects including multidimensional arrays.
 
-## Dependencies
+Dependencies
+------------
 
 - Apache must have R+W access to the storage.php.serial file.
 
-## Usage
+Usage
+-----
 
 - Move the storage folder into your web area.
 - Link the class into your existing project.
@@ -46,7 +50,8 @@ $stored_book = $storage->get("book");
 print_r($stored_book);
 ```
 
-## Legal
+Legal
+-----
 
 Copyright (c) 2011, Matt Colf
 
