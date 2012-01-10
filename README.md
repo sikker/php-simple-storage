@@ -13,20 +13,20 @@ serialized and saved to a flat file.
 
 ##USAGE
 
-1. Move the storage folder into your web area.
-2. Link the class into your existing project.
+- Move the storage folder into your web area.
+- Link the class into your existing project.
 
 ```php
 require_once "storage/simple_storage.class.php";
 ```
 
-3. Create an instance of the class.
+- Create an instance of the class.
 
 ```php
 $storage = new SimpleStorage();
 ```
 
-4. Put and get content as needed. Note that the storage key must be a string!.
+- Put and get content as needed. Note that the storage key must be a string!.
 
 ```php
 $book = array(														
