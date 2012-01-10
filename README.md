@@ -24,11 +24,11 @@ $storage = new SimpleStorage();
 ``````````````````````````
 4. Put and get content as needed. Note that the storage key must be a string!.
 ``````````````````````````
-$book = array(
-	"title" => "A Day In The Life",
-	"author" => "John Smith",
-	"date" => date("c"),
-	"pages" => 428,
+$book = array(														<br />
+	"title" => "A Day In The Life",									<br />
+	"author" => "John Smith",										<br />
+	"date" => date("c"),											<br />
+	"pages" => 428,													<br />
 	"contents" => array(
 		"chapter1" => "One upon a time...",
 		"chapter2" => "...a toad...",
