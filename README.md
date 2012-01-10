@@ -23,7 +23,7 @@ require_once "storage/simple_storage.class.php";
 $storage = new SimpleStorage();
 ``````````````````````````
 4. Put and get content as needed. Note that the storage key must be a string!.
-:::php
+```php
 $book = array(														
 		"title" => "A Day In The Life",									
 		"author" => "John Smith",										
@@ -38,3 +38,4 @@ $book = array(
 	$storage->put("book",$book);
 	$stored_book = $storage->get("book");
 	print_r($stored_book);
+```
