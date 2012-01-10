@@ -19,12 +19,12 @@ Usage
 
 1. Move the storage folder into your web area.
 2. Link the class into your existing project.
-```PHP
+```
 require_once "storage/simple_storage.class.php";
 ```
 
 3. Create an instance of the class.
-```PHP
+```
 $storage = new SimpleStorage();
 ```
 
