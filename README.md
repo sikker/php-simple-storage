@@ -2,7 +2,7 @@
 ========================================
 
 This class provides an interface to a very simple key:value based storage system. All data is 
-serialized and saved to a flat file. 
+stored in a flat file using JSON.
 
 Features
 --------
@@ -12,7 +12,7 @@ Features
 Dependencies
 ------------
 
-- Apache must have R+W access to the storage.php.serial file.
+- Apache must have R+W access to the storage.json file.
 
 Usage
 -----

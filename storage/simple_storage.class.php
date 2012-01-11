@@ -4,20 +4,20 @@
 
 class SimpleStorage {
 
-	private $file = "storage.php.serial";
+	private $file = "storage.json";
 	private $data = array("updated" => "", "checksum" => "", "data" => array("foo" => "bar"));
 	private $dirty = FALSE;
 	
 	public function __construct() {
 		// load data
 		if ( file_exists($this->file) ) {
-			$serial = file_get_contents($this->file);
-			if ( strlen($serial) == 0 ) return;
-			if ( ($this->data = unserialize($serial)) === FALSE ) throw new Exception("Unable to unserialize $this->file.");
+			$json = file_get_contents($this->file);
+			if ( strlen($json) == 0 ) return;
+			if ( ($this->data = json_decode($json,$assoc = TRUE)) === NULL ) throw new Exception("Unable to decode $this->file.");
 			// verify data integrity
 			if ( $this->data["checksum"] != md5($this->data["data"]) ) throw new Exception("Data from $this->file is not valid. Fails checksum.");
 			// import data
-			if ( ($this->data["data"] = unserialize($this->data["data"])) === FALSE ) throw new Exception("Unable to unserialize data from $file.");	
+			if ( ($this->data["data"] = json_decode($this->data["data"],$assoc = TRUE)) === NULL ) throw new Exception("Unable to unserialize data from $file.");	
 		}
 	}
 	
@@ -32,10 +32,10 @@ class SimpleStorage {
 		// prepare to writeback to file
 		$data = $this->data;
 		$data["updated"] = date("c");;
-		$data["data"] = serialize($this->data["data"]);
+		$data["data"] = json_encode($this->data["data"]);
 		$data["checksum"] = md5($data["data"]);
 		// overwrite existing data
-		if ( file_put_contents($this->file,serialize($data)) ) return TRUE;
+		if ( file_put_contents($this->file,json_encode($data)) ) return TRUE;
 		else throw new Exception("Unable to write back to $this->file. Data will be lost.");
 	}
 
