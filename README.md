@@ -47,10 +47,8 @@ Usage
 			"chapter3" => "found a home in the forest.".
 		)
 	);
-	```
-	
-	
-	```
+
+
 	$storage->put("book",$book);
 	$stored_book = $storage->get("book");
 	\\ or
