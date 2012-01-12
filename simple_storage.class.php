@@ -94,8 +94,9 @@ class SimpleStorage {
 		if ( $this->domain_exists($domain) ) {
 			unset($this->data["domains"][$domain]);
 			$this->dirty = TRUE;
+			return TRUE;
 		}	
-		else return FALSE;
+		return FALSE;
 	}	
 
 }
