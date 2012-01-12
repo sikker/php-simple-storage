@@ -30,7 +30,9 @@ Usage
 	```
 	$storage = new SimpleStorage();
 	```
+	
 	or
+	
 	```
 	$storage = new SimpleStorage("YOUR_DOMAIN_NAME");
 	```
