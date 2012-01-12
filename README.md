@@ -18,31 +18,31 @@ Dependencies
 Reference
 ---------
 
-- 	SimpleStorage::__construct($your_default_domain = "default")
+- 	```SimpleStorage::__construct($your_default_domain = "default")```
 
 	Throws an ```exception()``` upon error.
 
-- 	SimpleStorage::flush()
+- 	```SimpleStorage::flush()```
 
 	Writes all stored data back to file. Throws an ```exception()``` on error.
 
-- 	SimpleStorage::put($key,$data,$domain = "YOUR_DEFAULT_DOMAIN")
+- 	```SimpleStorage::put($key,$data,$domain = "YOUR_DEFAULT_DOMAIN")```
 
 	Stores new data under your selected domain (must already be created) that can later be referenced by ```$key```.
 
-- 	SimpleStorage::get($key,$domain = "YOUR_DEFAULT_DOMAIN")
+- 	```SimpleStorage::get($key,$domain = "YOUR_DEFAULT_DOMAIN")```
 
 	Retrieves data you have already stored within ```$domain```.
 	
-- 	SimpleStorage::domain_exists($domain)
+- 	```SimpleStorage::domain_exists($domain)```
 
 	Check to see if a domain exists. Returns ```TRUE``` or ```FALSE```.
 	
-- 	SimpleStorage::domain_add($domain)
+- 	```SimpleStorage::domain_add($domain)```
 
 	Adds a new domain. Returns ```FALSE`` on error.
 
-- 	SimpleStorage::domain_remove($domain)
+- 	```SimpleStorage::domain_remove($domain)```
 
 	Remove an existing domain and delete all associated data. Returns ```FALSE``` on error.
 
