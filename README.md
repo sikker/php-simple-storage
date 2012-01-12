@@ -29,11 +29,7 @@ Usage
 
 	```
 	$storage = new SimpleStorage();
-	```
-	
-	or
-	
-	```
+	\\ or
 	$storage = new SimpleStorage("YOUR_DOMAIN_NAME");
 	```
 
@@ -57,17 +53,9 @@ Usage
 	```
 	$storage->put("book",$book);
 	$stored_book = $storage->get("book");
-	```
-	
-	or
-	
-	```
+	\\ or
 	$storage->put("book",$book,"YOUR_DOMAIN_NAME");
 	$stored_book = $storage->get("book","YOUR_DOMAIN_NAME");
-	```
-	
-	
-	```
 	print_r($stored_book);
 	```
 
