@@ -8,6 +8,7 @@ Features
 --------
 
 - Provides a key:value storage system. Supports most PHP objects including multidimensional arrays.
+- Ability to divide data into domains.
 
 Dependencies
 ------------
@@ -19,34 +20,50 @@ Usage
 
 1. Move the storage folder into your web area.
 2. Link the class into your existing project.
-```
-require_once "storage/simple_storage.class.php";
-```
+
+	```
+	require_once "storage/simple_storage.class.php";
+	```
 
 3. Create an instance of the class.
-```
-$storage = new SimpleStorage();
-```
+
+	```
+	$storage = new SimpleStorage();
+	```
+	or
+	```
+	$storage = new SimpleStorage("YOUR_DOMAIN_NAME");
+	```
 
 4. Put and get content as needed. Note that the storage key must be a string!.
 
-```
-$book = array(														
-	"title" => "A Day In The Life",									
-	"author" => "John Smith",										
-	"date" => date("c"),											
-	"pages" => 428,												
-	"contents" => array(
-		"chapter1" => "One upon a time...",
-		"chapter2" => "...a toad...",
-		"chapter3" => "found a home in the forest.".
-	)
-);
-
-$storage->put("book",$book);
-$stored_book = $storage->get("book");
-print_r($stored_book);
-```
+	```
+	$book = array(														
+		"title" => "A Day In The Life",									
+		"author" => "John Smith",										
+		"date" => date("c"),											
+		"pages" => 428,												
+		"contents" => array(
+			"chapter1" => "One upon a time...",
+			"chapter2" => "...a toad...",
+			"chapter3" => "found a home in the forest.".
+		)
+	);
+	```
+	
+	```
+	$storage->put("book",$book);
+	$stored_book = $storage->get("book");
+	```
+	or
+	```
+	$storage->put("book",$book,"YOUR_DOMAIN_NAME");
+	$stored_book = $storage->get("book","YOUR_DOMAIN_NAME");
+	```
+	
+	```
+	print_r($stored_book);
+	```
 
 Legal
 -----
