@@ -25,10 +25,10 @@
 
 class SimpleStorage {
 
-	private $file = "/volume1/web/storage-test/php-simple-storage/storage.json";
+	protected $file; // Protected so that it can be overridden with a default by a subclass
 	private $dirty = FALSE;
 	private $domain = "default";
-	private $data = array(
+	public $data = array(
 		"meta" => array(
 			"updated" => "", 
 			"checksum" => ""
@@ -39,8 +39,21 @@ class SimpleStorage {
 			)
 		)
 	);
+
+	public function __construct($domain = NULL, $file = NULL) {
+		// Guess the location of our json file unless it has been specified. The priority
+		// goes like this:
+		// 	1: The file stated in the constructor.
+		// 	2: If null, the file stated in the protected attribute prior to construct.
+		// 	3: If also null, a file called storage.json in the same directory as the class.
+		if ( $file !== NULL ) {
+			$this->file = $file;
+		}
+		
+		if ( $this->file === NULL ) {
+			$this->file = __DIR__ . '/storage.json';
+		}
 	
-	public function __construct($domain = NULL) {
 		// load data
 		if ( file_exists($this->file) ) {
 			$json = file_get_contents($this->file);
