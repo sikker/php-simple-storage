@@ -28,7 +28,7 @@ class SimpleStorage {
 	protected $file; // Protected so that it can be overridden with a default by a subclass
 	private $dirty = FALSE;
 	private $domain = "default";
-	public $data = array(
+	private $data = array(
 		"meta" => array(
 			"updated" => "", 
 			"checksum" => ""
